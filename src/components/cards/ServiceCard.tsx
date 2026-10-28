@@ -14,6 +14,7 @@ import {
   Wind,
 } from "lucide-react";
 import { WhatsAppButton } from "@/components/cta/WhatsAppButton";
+import { SpotlightCard } from "@/components/motion/SpotlightCard";
 import type { Service, ServiceIconName } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
@@ -48,15 +49,15 @@ export function ServiceCard({
   const Icon = icons[service.icon];
 
   return (
+    <SpotlightCard className={cn(featured && "md:col-span-2 lg:col-span-1")}>
     <article
       className={cn(
-        "flex h-full flex-col rounded-3xl border bg-white p-6 shadow-[var(--shadow-card)] transition duration-200 hover:-translate-y-1 hover:shadow-lg",
+        "flex h-full flex-col rounded-3xl border bg-white p-6 shadow-[var(--shadow-card)]",
         service.category === "specialized"
-          ? "border-navy/10"
+          ? "border-navy/15 bg-gradient-to-br from-white to-navy/5"
           : service.category === "family"
-            ? "border-coral/15"
-            : "border-teal/15",
-        featured && "md:col-span-2 lg:col-span-1",
+            ? "border-coral/20 bg-gradient-to-br from-white to-coral-light/70"
+            : "border-teal/20 bg-gradient-to-br from-white to-teal-light/80",
       )}
     >
       <div
@@ -86,5 +87,6 @@ export function ServiceCard({
         />
       </div>
     </article>
+    </SpotlightCard>
   );
 }

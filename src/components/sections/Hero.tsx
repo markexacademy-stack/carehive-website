@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { PhoneButton } from "@/components/cta/PhoneButton";
 import { WhatsAppButton } from "@/components/cta/WhatsAppButton";
+import { WaveBand } from "@/components/motion/WaveBand";
 import { Container } from "@/components/ui/container";
 import { HERO_TRUST } from "@/lib/content";
 import { SITE } from "@/lib/site";
@@ -84,6 +85,7 @@ export function Hero() {
           </div>
         </div>
       </Container>
+      <WaveBand className="text-white" />
     </section>
   );
 }

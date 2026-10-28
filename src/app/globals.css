@@ -123,6 +123,65 @@ body {
   animation: fade-up 0.6s ease both;
 }
 
+.cursor-glow {
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--teal) 42%, transparent) 0%,
+    color-mix(in srgb, var(--coral) 22%, transparent) 42%,
+    transparent 70%
+  );
+  filter: blur(6px);
+}
+
+.cursor-dot {
+  background: linear-gradient(135deg, var(--teal), var(--coral));
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--teal) 22%, transparent);
+}
+
+.spotlight-card {
+  position: relative;
+  border-radius: 1.75rem;
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 180ms ease;
+  will-change: transform;
+}
+
+.spotlight-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--spot-x, 50%) var(--spot-y, 20%),
+    color-mix(in srgb, white 70%, transparent),
+    transparent 46%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+.wave-drift {
+  animation: wave-drift 16s linear infinite;
+}
+
+.wave-drift-slow {
+  animation: wave-drift 24s linear infinite reverse;
+}
+
+@keyframes wave-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

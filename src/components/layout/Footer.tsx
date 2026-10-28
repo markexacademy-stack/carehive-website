@@ -60,10 +60,30 @@ export function Footer() {
           <h2 className="text-sm font-bold tracking-[0.14em] text-teal-light">
             Contact
           </h2>
-          <p className="mt-4 text-sm text-white/80">{SITE.phone.display}</p>
-          <p className="mt-2 text-sm leading-6 text-white/70">
-            {SITE.location.shortDisplay}
+          <p className="mt-4 text-sm text-white/80">
+            <a href={SITE.phone.href} className="hover:text-white">
+              {SITE.phone.display}
+            </a>
           </p>
+          <p className="mt-1 text-sm text-white/80">
+            <a href={SITE.secondaryPhone.href} className="hover:text-white">
+              {SITE.secondaryPhone.display}
+            </a>
+          </p>
+          <p className="mt-2 text-sm leading-6 text-white/70">
+            {SITE.location.display}
+          </p>
+          <a href={`mailto:${SITE.email}`} className="mt-2 block text-sm text-white/80 hover:text-white">
+            {SITE.email}
+          </a>
+          <a
+            href={SITE.website.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block text-sm text-teal-light hover:text-white"
+          >
+            {SITE.website.label}
+          </a>
           <div className="mt-5 flex flex-col gap-2">
             <PhoneButton label="Call CareHive" size="sm" />
             <WhatsAppButton label="Chat With CareHive" size="sm" />

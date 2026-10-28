@@ -57,11 +57,11 @@ export const faqs: FaqItem[] = [
   {
     question: "How do I request a caregiver?",
     answer:
-      "Use WhatsApp, call +91 97787 81988, or send the Request Care form on this website. Tell us the patient's needs, location and preferred hours. Our team will get in touch to understand the requirement.",
+      "Use WhatsApp, call +91 97787 81988 or +91 88911 55410, or send the Request Care form on this website. Tell us the patient's needs, location and preferred hours. Our team will get in touch to understand the requirement.",
   },
   {
     question: "How can I contact CareHive?",
     answer:
-      "Call or WhatsApp CareHive on +91 97787 81988. You can also use the contact form or Request Care form on this website.",
+      "Call CareHive on +91 97787 81988 or +91 88911 55410, or WhatsApp +91 97787 81988. You can also use the contact form or Request Care form on this website.",
   },
 ];

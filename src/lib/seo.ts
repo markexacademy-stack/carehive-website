@@ -79,22 +79,31 @@ export function organizationJsonLd() {
     name: SITE.name,
     url: siteUrl,
     logo: `${siteUrl}/images/carehive-logo.png`,
-    telephone: SITE.phone.e164,
+    telephone: [SITE.phone.e164, SITE.secondaryPhone.e164],
     description: SITE.description,
     address: {
       "@type": "PostalAddress",
-      streetAddress: SITE.location.area,
+      streetAddress: SITE.location.street,
       addressLocality: SITE.location.city,
       addressRegion: SITE.location.state,
       addressCountry: "IN",
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: SITE.phone.e164,
-      contactType: "customer service",
-      areaServed: "IN",
-      availableLanguage: ["English", "Malayalam"],
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.phone.e164,
+        contactType: "customer service",
+        areaServed: "IN",
+        availableLanguage: ["English", "Malayalam"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.secondaryPhone.e164,
+        contactType: "customer service",
+        areaServed: "IN",
+        availableLanguage: ["English", "Malayalam"],
+      },
+    ],
   };
 }
 
@@ -123,7 +132,7 @@ export function localBusinessJsonLd() {
     name: SITE.name,
     image: `${siteUrl}/images/carehive-logo.png`,
     url: siteUrl,
-    telephone: SITE.phone.e164,
+    telephone: [SITE.phone.e164, SITE.secondaryPhone.e164],
     description: SITE.description,
     slogan: SITE.tagline,
     priceRange: "$$",
@@ -147,7 +156,7 @@ export function localBusinessJsonLd() {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: SITE.location.area,
+      streetAddress: SITE.location.street,
       addressLocality: SITE.location.city,
       addressRegion: SITE.location.state,
       addressCountry: "IN",
@@ -197,10 +206,10 @@ export function serviceJsonLd(service: Service) {
     provider: {
       "@type": "Organization",
       name: SITE.name,
-      telephone: SITE.phone.e164,
+      telephone: [SITE.phone.e164, SITE.secondaryPhone.e164],
       address: {
         "@type": "PostalAddress",
-        streetAddress: SITE.location.area,
+        streetAddress: SITE.location.street,
         addressLocality: SITE.location.city,
         addressRegion: SITE.location.state,
         addressCountry: "IN",

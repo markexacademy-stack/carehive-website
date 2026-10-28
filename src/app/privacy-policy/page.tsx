@@ -71,7 +71,8 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-bold text-navy">Your choices</h2>
             <p className="mt-3">
-              You may contact CareHive on {SITE.phone.display} to ask about an
+              You may contact CareHive on {SITE.phone.display} or{" "}
+              {SITE.secondaryPhone.display} to ask about an
               enquiry you submitted, or to request that we update or close a
               record where practical.
             </p>
@@ -79,8 +80,8 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-bold text-navy">Contact</h2>
             <p className="mt-3">
-              {SITE.name}, {SITE.location.display}. Phone / WhatsApp:{" "}
-              {SITE.phone.display}.
+              {SITE.name}, {SITE.location.display}. Phone: {SITE.phone.display}{" "}
+              or {SITE.secondaryPhone.display}. WhatsApp: {SITE.whatsapp.display}.
             </p>
           </section>
         </Container>

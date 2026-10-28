@@ -45,7 +45,8 @@ export default function DisclaimerPage() {
             emergency medical service available to you.
           </p>
           <p>
-            {SITE.name}, {SITE.location.display}. {SITE.phone.display}.
+            {SITE.name}, {SITE.location.display}. {SITE.phone.display} or{" "}
+            {SITE.secondaryPhone.display}.
           </p>
         </Container>
       </section>

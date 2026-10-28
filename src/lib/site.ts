@@ -7,17 +7,32 @@ export const SITE = {
     "CareHive provides professional home nursing, patient care, elderly care, caregiver, bystander, mother & baby and specialized home healthcare services in Trivandrum, Kerala.",
   location: {
     area: "Kazhakkoottam",
+    street: "Padikavilakam Road, Kariyil",
+    pin: "695582",
     city: "Thiruvananthapuram",
     cityShort: "Trivandrum",
     state: "Kerala",
     country: "India",
-    display: "Kazhakkoottam, Thiruvananthapuram, Kerala, India",
+    display:
+      "Padikavilakam Road, Kariyil, Kazhakkoottam, Thiruvananthapuram, Kerala – 695582",
     shortDisplay: "Kazhakkoottam, Thiruvananthapuram, Kerala",
   },
+  email: "carehive82@gmail.com",
+  website: {
+    href: "https://www.carehivekerala.com",
+    label: "www.carehivekerala.com",
+  },
+  promise: "Professional care · Compassion · Peace of mind",
+  pillars: ["Home Healthcare", "Patient Support", "NRI Family Coordination"] as const,
   phone: {
     display: "+91 97787 81988",
     href: "tel:+919778781988",
     e164: "+919778781988",
+  },
+  secondaryPhone: {
+    display: "+91 88911 55410",
+    href: "tel:+918891155410",
+    e164: "+918891155410",
   },
   whatsapp: {
     number: "919778781988",

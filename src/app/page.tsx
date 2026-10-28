@@ -1,3 +1,4 @@
+import { BrochureCards } from "@/components/sections/BrochureCards";
 import { Hero } from "@/components/sections/Hero";
 import { QuickEnquiryBar } from "@/components/sections/QuickEnquiryBar";
 import { TrustIndicators } from "@/components/sections/TrustIndicators";
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <BrochureCards />
       <QuickEnquiryBar />
       <TrustIndicators />
       <AboutSection />

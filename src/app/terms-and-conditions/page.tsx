@@ -65,7 +65,8 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-navy">Contact</h2>
             <p className="mt-3">
-              {SITE.name}, {SITE.location.display}. {SITE.phone.display}.
+              {SITE.name}, {SITE.location.display}. {SITE.phone.display} or{" "}
+              {SITE.secondaryPhone.display}.
             </p>
           </section>
         </Container>

@@ -34,11 +34,29 @@ export function ContactSection({
               </p>
               <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-navy">
                 <Phone className="h-4 w-4 text-teal" aria-hidden />
-                {SITE.phone.display}
+                <a href={SITE.phone.href} className="hover:text-teal">
+                  {SITE.phone.display}
+                </a>
+              </p>
+              <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-navy">
+                <Phone className="h-4 w-4 text-teal" aria-hidden />
+                <a href={SITE.secondaryPhone.href} className="hover:text-teal">
+                  {SITE.secondaryPhone.display}
+                </a>
               </p>
               <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-navy">
                 <MessageCircle className="h-4 w-4 text-teal" aria-hidden />
                 WhatsApp {SITE.whatsapp.display}
+              </p>
+              <p className="mt-2 text-sm font-semibold text-navy">
+                <a href={`mailto:${SITE.email}`} className="hover:text-teal">
+                  {SITE.email}
+                </a>
+              </p>
+              <p className="mt-1 text-sm font-semibold text-teal">
+                <a href={SITE.website.href} target="_blank" rel="noopener noreferrer" className="hover:text-teal-dark">
+                  {SITE.website.label}
+                </a>
               </p>
               <div className="mt-5 flex flex-col gap-2 sm:flex-row">
                 <PhoneButton label="Call CareHive" />

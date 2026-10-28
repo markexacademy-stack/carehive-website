@@ -19,13 +19,14 @@ function NavbarLogo() {
       className="flex shrink-0 items-center overflow-visible"
     >
       <Image
-        src="/images/carehive-logo.png"
+        src="/images/carehive-logo-clear.png"
         alt="CareHive Healthcare Services — Care That Feels Like Home"
-        width={673}
-        height={686}
+        width={545}
+        height={596}
         priority
+        loading="eager"
         unoptimized
-        className="h-[3.35rem] w-auto max-w-[9.5rem] origin-left object-contain object-left sm:h-16 sm:max-w-[11rem] scale-[1.25]"
+        className="logo-on-navy h-14 w-auto max-w-[7.5rem] object-contain object-left sm:h-16 sm:max-w-[8.5rem]"
       />
     </Link>
   );
@@ -53,13 +54,11 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 overflow-visible border-b transition-all duration-300",
-        scrolled
-          ? "border-teal/20 bg-white shadow-[var(--shadow-nav)]"
-          : "border-transparent bg-white",
+        "header-enter sticky top-0 z-50 overflow-visible border-b border-white/10 text-white backdrop-blur-xl transition-all duration-300",
+        scrolled ? "bg-navy-deep/95 shadow-[var(--shadow-nav)]" : "bg-navy-deep/70",
       )}
     >
-      <div className="mx-auto flex min-h-[4.75rem] max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-2 sm:min-h-[5.25rem] sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto flex min-h-[5.25rem] max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-2 sm:min-h-[5.75rem] sm:px-6 lg:max-w-7xl lg:px-8">
         <NavbarLogo />
 
         <nav
@@ -78,8 +77,8 @@ export function Navbar() {
                 className={cn(
                   "rounded-full px-3 py-2 text-sm font-semibold transition",
                   active
-                    ? "bg-teal-light text-navy ring-1 ring-teal/20"
-                    : "text-navy/75 hover:bg-coral-light/70 hover:text-navy",
+                    ? "bg-white/15 text-white"
+                    : "text-white/75 hover:bg-white/10 hover:text-white",
                 )}
               >
                 {link.label}
@@ -110,7 +109,7 @@ export function Navbar() {
           </CTAButton>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-navy"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -124,7 +123,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-menu"
-          className="border-t border-line bg-white lg:hidden"
+          className="border-t border-white/10 bg-navy-deep lg:hidden"
         >
           <nav
             className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4"
@@ -135,7 +134,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-3 text-base font-semibold text-navy hover:bg-teal-light"
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-white hover:bg-white/10"
               >
                 {link.label}
               </Link>
@@ -150,7 +149,7 @@ export function Navbar() {
         </div>
       ) : null}
       <div
-        className="h-0.5 bg-gradient-to-r from-teal via-teal/40 to-coral"
+        className="h-0.5 bg-gradient-to-r from-teal via-[#55e6dc] to-coral"
         aria-hidden
       />
     </header>

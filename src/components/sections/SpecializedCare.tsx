@@ -6,7 +6,7 @@ import { SPECIALIZED_HIGHLIGHTS } from "@/lib/content";
 
 export function SpecializedCare() {
   return (
-    <section className="bg-navy py-16 text-white sm:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-deep via-navy to-[#12315f] py-16 text-white sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <SectionHeading

@@ -6,7 +6,7 @@ import { PROCESS_STEPS } from "@/lib/content";
 
 export function ProcessSteps() {
   return (
-    <section className="bg-white py-16 sm:py-20" id="how-it-works">
+    <section className="bg-[#fff1ea] py-16 sm:py-24" id="how-it-works">
       <Container>
         <SectionHeading
           className="mb-10"
@@ -14,14 +14,17 @@ export function ProcessSteps() {
           title="Requesting care should feel straightforward"
           description="Four clear steps from the first message to care beginning at home."
         />
-        <ol className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <ol className="relative grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <li
+            aria-hidden
+            className="pointer-events-none absolute left-[12%] right-[12%] top-10 hidden h-px bg-gradient-to-r from-teal via-teal/40 to-coral xl:block"
+          />
           {PROCESS_STEPS.map((step) => (
-            <li
-              key={step.number}
-              className="relative rounded-3xl border border-line bg-soft p-6"
-            >
-              <span className="text-3xl font-extrabold text-teal">{step.number}</span>
-              <h3 className="mt-4 text-lg font-bold text-navy">{step.title}</h3>
+            <li key={step.number} className="relative px-1 py-2">
+              <span className="font-brand relative z-10 block text-5xl font-semibold text-coral">
+                {step.number}
+              </span>
+              <h3 className="mt-3 text-lg font-bold text-navy">{step.title}</h3>
               <p className="mt-2 text-sm leading-6 text-muted">{step.text}</p>
             </li>
           ))}

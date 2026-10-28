@@ -1,4 +1,5 @@
-import { CursorAura } from "@/components/motion/CursorAura";
+import { ScrollMotion } from "@/components/motion/ScrollMotion";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/cta/FloatingWhatsApp";
@@ -7,7 +8,8 @@ import { MobileStickyCTA } from "@/components/cta/MobileStickyCTA";
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <CursorAura />
+      <ScrollProgress />
+      <ScrollMotion />
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>

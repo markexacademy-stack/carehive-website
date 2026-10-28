@@ -1,3 +1,4 @@
+import { Entrance } from "@/components/motion/Entrance";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
@@ -17,42 +18,48 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "py-14 sm:py-16",
-        dark
-          ? "bg-navy text-white"
-          : "bg-gradient-to-br from-teal-light via-soft to-white",
+        "relative overflow-hidden py-20 text-white sm:py-24",
+        dark ? "bg-navy" : "bg-navy-deep",
       )}
     >
-      <Container className="max-w-4xl">
-        {eyebrow ? (
-          <p
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <span className="float-soft absolute -left-10 top-8 h-36 w-36 rounded-full bg-coral/10 blur-2xl" />
+        <span className="float-soft float-soft-delay absolute right-0 top-0 h-40 w-40 rounded-full bg-teal/15 blur-2xl" />
+      </div>
+      <Container className="relative grid items-end gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <Entrance>
+          {eyebrow ? (
+            <p
+              className={cn(
+                "text-xs font-semibold tracking-[0.18em]",
+                "text-[#55e6dc]",
+              )}
+            >
+              {eyebrow}
+            </p>
+          ) : null}
+          <h1
             className={cn(
-              "text-xs font-semibold tracking-[0.18em]",
-              dark ? "text-teal-light" : "text-teal",
+              "font-brand mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl",
+              "text-white",
             )}
           >
-            {eyebrow}
-          </p>
-        ) : null}
-        <h1
-          className={cn(
-            "mt-3 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl",
-            dark ? "text-white" : "text-navy",
-          )}
-        >
-          {title}
-        </h1>
-        {description ? (
-          <p
-            className={cn(
-              "mt-4 max-w-2xl text-base leading-7 sm:text-lg",
-              dark ? "text-white/80" : "text-muted",
-            )}
-          >
-            {description}
-          </p>
-        ) : null}
-        {children ? <div className="mt-8">{children}</div> : null}
+            {title}
+          </h1>
+        </Entrance>
+        <Entrance delay={0.08}>
+          {description ? (
+            <p
+              className={cn(
+                "max-w-xl text-base leading-7 sm:text-lg",
+                "text-white/75",
+              )}
+            >
+              {description}
+            </p>
+          ) : null}
+          {children ? <div className="mt-6">{children}</div> : null}
+        </Entrance>
       </Container>
     </section>
   );

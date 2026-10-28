@@ -16,40 +16,41 @@ export function ContactSection({
   const mapsUrl = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL;
 
   return (
-    <section className="bg-white py-16 sm:py-20" id="contact">
+    <section className="bg-[#102a56] py-16 text-white sm:py-24" id="contact">
       <Container>
         <SectionHeading
+          invert
           className="mb-10"
           eyebrow="Contact"
           title={heading}
           description="Call, WhatsApp, or send a care request. CareHive Healthcare Services is based in Kazhakkoottam, Thiruvananthapuram."
         />
-        <div className={`grid gap-8 ${showForm ? "lg:grid-cols-2" : ""}`}>
+        <div className={`grid gap-8 ${showForm ? "lg:grid-cols-2" : "lg:grid-cols-[1.1fr_0.9fr]"}`}>
           <div className="space-y-5">
-            <div className="rounded-3xl border border-line bg-soft p-6">
-              <h3 className="text-lg font-bold text-navy">{SITE.name}</h3>
-              <p className="mt-3 flex items-start gap-2 text-sm leading-6 text-muted">
-                <MapPin className="mt-0.5 h-4 w-4 text-teal" aria-hidden />
+            <div className="rounded-[2rem] border border-white/10 bg-navy-deep p-6 sm:p-8">
+              <h3 className="font-brand text-2xl font-semibold">{SITE.name}</h3>
+              <p className="mt-3 flex items-start gap-2 text-sm leading-6 text-white/75">
+                <MapPin className="mt-0.5 h-4 w-4 text-[#55e6dc]" aria-hidden />
                 {SITE.location.display}
               </p>
-              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-navy">
-                <Phone className="h-4 w-4 text-teal" aria-hidden />
-                <a href={SITE.phone.href} className="hover:text-teal">
+              <p className="mt-3 flex items-center gap-2 text-sm font-semibold">
+                <Phone className="h-4 w-4 text-[#55e6dc]" aria-hidden />
+                <a href={SITE.phone.href} className="hover:text-[#55e6dc]">
                   {SITE.phone.display}
                 </a>
               </p>
-              <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-navy">
-                <Phone className="h-4 w-4 text-teal" aria-hidden />
-                <a href={SITE.secondaryPhone.href} className="hover:text-teal">
+              <p className="mt-2 flex items-center gap-2 text-sm font-semibold">
+                <Phone className="h-4 w-4 text-[#55e6dc]" aria-hidden />
+                <a href={SITE.secondaryPhone.href} className="hover:text-[#55e6dc]">
                   {SITE.secondaryPhone.display}
                 </a>
               </p>
-              <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-navy">
-                <MessageCircle className="h-4 w-4 text-teal" aria-hidden />
+              <p className="mt-2 flex items-center gap-2 text-sm font-semibold">
+                <MessageCircle className="h-4 w-4 text-[#55e6dc]" aria-hidden />
                 WhatsApp {SITE.whatsapp.display}
               </p>
-              <p className="mt-2 text-sm font-semibold text-navy">
-                <a href={`mailto:${SITE.email}`} className="hover:text-teal">
+              <p className="mt-2 text-sm font-semibold">
+                <a href={`mailto:${SITE.email}`} className="hover:text-[#55e6dc]">
                   {SITE.email}
                 </a>
               </p>
@@ -63,7 +64,7 @@ export function ContactSection({
                 <WhatsAppButton label="WhatsApp CareHive" messageKey="general" />
               </div>
             </div>
-            <div className="overflow-hidden rounded-3xl border border-line bg-teal-light min-h-64">
+            <div className="min-h-64 overflow-hidden rounded-[2rem] border border-white/10 bg-[#07162e]">
               {mapsUrl ? (
                 <iframe
                   title="CareHive location map"
@@ -75,10 +76,10 @@ export function ContactSection({
               ) : (
                 <div className="flex h-80 flex-col items-center justify-center px-6 text-center">
                   <MapPin className="h-8 w-8 text-teal" aria-hidden />
-                  <p className="mt-3 font-semibold text-navy">
+                  <p className="mt-3 font-semibold text-white">
                     Map location will be added once the exact CareHive address is confirmed.
                   </p>
-                  <p className="mt-2 text-sm text-muted">
+                  <p className="mt-2 text-sm text-white/70">
                     {SITE.location.display}
                   </p>
                 </div>

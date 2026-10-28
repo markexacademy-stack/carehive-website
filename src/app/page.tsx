@@ -20,14 +20,14 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <BrochureCards />
-      <QuickEnquiryBar />
       <TrustIndicators />
-      <AboutSection />
       <ServiceGrid />
-      <SpecializedCare />
+      <QuickEnquiryBar />
+      <AboutSection />
+      <BrochureCards />
       <WhyCareHive />
       <ProcessSteps />
+      <SpecializedCare />
       <CareOptions />
       <FamilySection />
       <TrustSection />

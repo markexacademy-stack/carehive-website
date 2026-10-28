@@ -8,8 +8,8 @@ type LogoProps = {
 };
 
 const fullLogoStyles = {
-  footer: "h-36 w-auto max-w-[13rem] sm:h-40",
-  default: "h-16 w-auto max-w-[11rem]",
+  footer: "logo-on-navy h-36 w-auto max-w-[12.5rem] sm:h-40",
+  default: "h-16 w-auto max-w-[10rem]",
 };
 
 export function Logo({
@@ -19,12 +19,13 @@ export function Logo({
 }: LogoProps) {
   return (
     <Image
-      src="/images/carehive-logo.png"
+      src="/images/carehive-logo-clear.png"
       alt="CareHive Healthcare Services — Care That Feels Like Home"
-      width={535}
-      height={584}
+      width={545}
+      height={596}
       priority={priority}
-      quality={100}
+      loading={priority ? "eager" : "lazy"}
+      unoptimized
       className={cn(
         "h-auto w-auto object-contain object-left",
         fullLogoStyles[variant],

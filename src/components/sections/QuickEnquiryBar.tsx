@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 
 export function QuickEnquiryBar() {
   return (
-    <section className="bg-navy">
+    <section className="bg-gradient-to-r from-coral to-teal">
       <Container className="flex flex-col items-start justify-between gap-4 py-5 sm:flex-row sm:items-center">
         <p className="text-lg font-semibold text-white">
           Need a caregiver or nurse for your loved one?

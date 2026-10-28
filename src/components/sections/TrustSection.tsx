@@ -1,28 +1,25 @@
-import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { TRUST_POINTS } from "@/lib/content";
 
 export function TrustSection() {
   return (
-    <section className="bg-soft py-16 sm:py-20">
+    <section className="overflow-hidden bg-[#fff8f0] py-16 sm:py-20">
       <Container>
-        <SectionHeading
-          className="mb-10"
-          title="Your Family Deserves Care You Can Trust"
-          description="CareHive is built around a professional, family-focused way of working — without exaggerated claims or invented credentials."
-        />
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {TRUST_POINTS.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-3 rounded-2xl border border-line bg-white px-5 py-4 text-sm font-semibold text-navy"
-            >
-              <CheckCircle2 className="h-5 w-5 text-teal" aria-hidden />
-              {item}
+        <p className="text-xs font-bold tracking-[0.22em] text-teal">Trust</p>
+        <h2 className="font-brand mt-3 max-w-4xl text-4xl font-semibold leading-tight text-navy sm:text-6xl">
+          Your Family Deserves Care You Can Trust
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
+          CareHive is built around a professional, family-focused way of working — without exaggerated claims or invented credentials.
+        </p>
+        <ol className="mt-10 divide-y divide-navy/10 border-y border-navy/10">
+          {TRUST_POINTS.map((item, index) => (
+            <li key={item} className="flex items-baseline gap-6 py-5">
+              <span className="font-brand text-2xl text-coral">0{index + 1}</span>
+              <span className="text-lg font-semibold text-navy">{item}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       </Container>
     </section>
   );

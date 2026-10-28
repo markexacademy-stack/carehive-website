@@ -78,7 +78,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     name: SITE.name,
     url: siteUrl,
-    logo: `${siteUrl}/images/carehive-logo.png`,
+    logo: `${siteUrl}/images/carehive-logo-clear.png`,
     telephone: [SITE.phone.e164, SITE.secondaryPhone.e164],
     description: SITE.description,
     address: {

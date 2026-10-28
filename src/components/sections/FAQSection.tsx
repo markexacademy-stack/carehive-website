@@ -11,9 +11,10 @@ export function FAQSection({
   title?: string;
 }) {
   return (
-    <section className="bg-soft py-16 sm:py-20" id="faqs">
+    <section className="bg-[#102a56] py-16 text-white sm:py-24" id="faqs">
       <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeading
+          invert
           eyebrow="FAQs"
           title={title}
           description="Clear answers without invented service areas, guarantees or medical claims."

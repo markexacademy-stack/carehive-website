@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { FadeIn } from "@/components/ui/fade-in";
 import { services } from "@/lib/services";
 
 export function ServiceGrid({
@@ -15,7 +14,8 @@ export function ServiceGrid({
   const items = limit ? services.slice(0, limit) : services;
 
   return (
-    <section className="bg-white py-16 sm:py-20" id="services">
+    <section className="relative overflow-hidden bg-soft py-16 sm:py-24" id="services">
+      <div aria-hidden className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal via-navy to-coral" />
       <Container>
         {heading ? (
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -29,11 +29,23 @@ export function ServiceGrid({
             </Link>
           </div>
         ) : null}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-4 md:grid-cols-6">
           {items.map((service, index) => (
-            <FadeIn key={service.slug} delay={index * 0.03}>
-              <ServiceCard service={service} />
-            </FadeIn>
+            <ServiceCard
+              key={service.slug}
+              service={service}
+              index={index}
+              featured={index === 0 || index === 5}
+              className={
+                index === 0
+                  ? "md:col-span-4"
+                  : index === 1 || index === 5
+                    ? "md:col-span-2"
+                    : index % 5 === 0
+                      ? "md:col-span-3"
+                      : "md:col-span-2"
+              }
+            />
           ))}
         </div>
       </Container>

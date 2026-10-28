@@ -14,8 +14,14 @@ export function Footer() {
   const hasSocials = socials.length > 0;
 
   return (
-    <footer className="bg-navy-deep text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+    <footer className="relative overflow-hidden bg-navy-deep text-white">
+      <p
+        aria-hidden
+        className="pointer-events-none select-none px-4 pt-8 font-brand text-[22vw] leading-none text-white/[0.06] sm:px-6"
+      >
+        CareHive
+      </p>
+      <div className="relative mx-auto -mt-8 grid max-w-6xl gap-10 px-4 pb-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <Logo variant="footer" />
           <p className="mt-4 max-w-xs text-sm leading-6 text-white/75">

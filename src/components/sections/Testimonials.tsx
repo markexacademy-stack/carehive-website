@@ -5,7 +5,7 @@ import { testimonials } from "@/lib/testimonials";
 
 export function Testimonials() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-[#fff8f0] py-16 sm:py-24">
       <Container>
         <SectionHeading
           className="mb-10"

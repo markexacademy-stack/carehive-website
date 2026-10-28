@@ -32,26 +32,30 @@ export function BrochureCards() {
           ))}
         </ul>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <SpotlightCard>
-            <figure className="overflow-hidden rounded-[1.75rem] border border-white bg-white shadow-[var(--shadow-card)]">
+        <div className="mt-10 grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+          <SpotlightCard className="h-auto">
+            <figure className="brochure-frame">
               <Image
                 src="/images/brochure-brand.png"
                 alt="CareHive logo card: Home Healthcare, Patient Support and NRI Family Coordination"
-                width={1400}
-                height={980}
-                className="h-auto w-full object-cover"
+                width={848}
+                height={628}
+                quality={95}
+                sizes="(max-width: 1024px) 100vw, 640px"
+                className="h-auto w-full"
               />
             </figure>
           </SpotlightCard>
-          <SpotlightCard>
-            <figure className="overflow-hidden rounded-[1.75rem] border border-white bg-white shadow-[var(--shadow-card)]">
+          <SpotlightCard className="h-auto">
+            <figure className="brochure-frame">
               <Image
                 src="/images/brochure-services.png"
                 alt="CareHive services card with patient care, specialised nursing, NRI coordination and both phone numbers"
-                width={1400}
-                height={980}
-                className="h-auto w-full object-cover"
+                width={858}
+                height={457}
+                quality={95}
+                sizes="(max-width: 1024px) 100vw, 640px"
+                className="h-auto w-full"
               />
             </figure>
           </SpotlightCard>
